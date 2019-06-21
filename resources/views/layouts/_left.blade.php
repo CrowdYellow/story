@@ -47,6 +47,17 @@
         </li>
         <li><a href="about-us.html"><i class="fa fa-user"></i>About Us</a></li>
         <li><a href="contact.html"><i class="fa fa-envelope-o"></i>Contact Us</a></li>
+        <li>
+            <a class="dropdown-item" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+        </li>
         <li><a href="login.html"><i class="fa fa-sign-in"></i>Login</a></li>
         <li><a href="register.html"><i class="fa fa-user-plus"></i>Register</a></li>
     </ul>

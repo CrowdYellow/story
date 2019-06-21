@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('avatar');
             $table->string('phone')->unique();
             $table->string('password');
-            $table->string("introduction")->comment("介绍");
+            $table->string("introduction")->nullable()->comment("介绍");
             $table->integer('follow_count')->default(0)->comment("关注量");
             $table->integer('articles_count')->default(0)->comment("文章数量");
             $table->integer('views_count')->default(0)->comment("访问量");

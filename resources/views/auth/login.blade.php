@@ -4,18 +4,25 @@
     <div class="pages section">
         <div class="container">
             <div class="pages-head">
-                <h3>LOGIN</h3>
+                <h3>登陆</h3>
             </div>
             <div class="login">
                 <div class="row">
-                    <form class="col s12">
+                    <form class="col s12" method="POST" action="{{ route('login') }}">
+                        @csrf
                         <div class="input-field">
-                            <input type="text" class="validate" placeholder="账号" required>
+                            <input type="text" class="validate" name="phone" placeholder="账号" required>
+                            @if ($errors->has('phone'))
+                                <strong style="color: #f00;">{{ $errors->first('phone') }}</strong>
+                            @endif
                         </div>
                         <div class="input-field">
-                            <input type="password" class="validate" placeholder="密码" required>
+                            <input type="password" class="validate" name="password" placeholder="密码" required>
+                            @if ($errors->has('password'))
+                                <strong style="color: #f00;">{{ $errors->first('password') }}</strong>
+                            @endif
                         </div>
-                        <a href="" class="button-default">登陆</a>
+                        <button type="submit" class="button-default">登陆</button>
                     </form>
                 </div>
             </div>
