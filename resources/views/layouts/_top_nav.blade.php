@@ -116,7 +116,55 @@
         .nav-top .all.on span {
             opacity: 1;
         }
-
+        .recommends {
+            width: 15rem;
+            overflow: hidden;
+            margin: 0px auto 0.5rem;
+            padding-top: 0.25rem;
+        }
+        .recommends .list {
+            width: 16rem;
+        }
+        a, a:hover {
+            text-decoration: none;
+            color: #5A6F79;
+        }
+        .recommends .list dl {
+            width: 7.25rem;
+            overflow: hidden;
+            float: left;
+            margin: 0px 0.5rem 0.5rem 0px;
+            background: #eee;
+        }
+        .recommends .list dd {
+            width: 6.25rem;
+            overflow: hidden;
+            padding: 0.35rem 0px 0px 0.5rem;
+        }
+        .recommends .list dd strong {
+            width: 6.25rem;
+            margin: 0px 0.5rem 0.1rem 0px;
+            max-height: 0.85rem;
+            overflow: hidden;
+            line-height: 0.875rem;
+            font-size: 14px;
+            color: rgb(81, 81, 81);
+            font-weight: normal;
+            display: block;
+        }
+        .recommends .list dd p {
+            display: none;
+        }
+        @media only screen and (min-width: 750px) {
+            .mainList_dl dd p { display: block; }
+            /*	.recommends .list dl { height: 9rem; } */
+            .recommends .list dd p { color: rgb(170, 170, 170); font-size: 10px; line-height: 0.75rem; max-height: 1.5rem; min-height: 1.5rem; overflow: hidden; width: 6.25rem; padding-top: 0.01rem; display: block; }
+        }
+        @media only screen and (max-width: 320px) {
+            .mainList_dl dd p { display: block; }
+            /*	.recommends .list dl { height: 9rem; } */
+            .recommends .list dd p { color: rgb(170, 170, 170); font-size: 10px; line-height: 0.75rem; max-height: 1.5rem;  min-height:1.5rem;overflow: hidden; width: 6.25rem; padding-top: 0.25rem; display: block; }
+        }
     </style>
 @stop
 <div class="row nav-top">

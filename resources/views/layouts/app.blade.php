@@ -53,15 +53,8 @@
 <div class="footer">
     <div class="container">
         <div class="about-us-foot">
-            <h6>MAUDE</h6>
-            <p>is a lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit.</p>
-        </div>
-        <div class="social-media">
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-google"></i></a>
-            <a href=""><i class="fa fa-linkedin"></i></a>
-            <a href=""><i class="fa fa-instagram"></i></a>
+            <h6>手机阅读</h6>
+            <p>手机读故事网,最适宜手机阅读的精品原创故事。作家作品集页面可以让你免费看完你喜欢的作家故事全文。电脑在线每天读点故事，让生活充满故事色彩。</p>
         </div>
         <div class="copyright">
             <span>© 2018 All Right Reserved</span>

@@ -18,6 +18,7 @@ class ArticlesController extends Controller
 
     public function show(Article $article)
     {
-        return view('articles.show', compact('article'));
+        $otherArticles = Article::where('category_id', $article->category_id)->orderBy('id', 'desc')->limit(6)->get();
+        return view('articles.show', compact('article', 'otherArticles'));
     }
 }
