@@ -4,7 +4,6 @@
         em {
             font-style: normal
         }
-
         .logo {
             height: 200px;
             background: #ff8800;
@@ -87,7 +86,7 @@
                         <p>{{ $article->excerpt }}</p>
                     </div>
                 </li>
-                @endforeach
+            @endforeach
         </ul>
     </div>
     <div class="row">
