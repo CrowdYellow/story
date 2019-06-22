@@ -41,7 +41,7 @@ class FirstCollection extends Command
      */
     public function handle()
     {
-        Articles::truncate();
+        Article::truncate();
         $data = [];
         foreach ($this->urls() as $url) {
             $rules = [

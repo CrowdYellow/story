@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Articles;
+use App\Models\Article;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
