@@ -7,11 +7,17 @@
             <li><a href="{{ route('register') }}"><i class="fa fa-user-plus"></i>注册</a></li>
         @else
             <li class="profil">
-                <img src="{{ asset(\Illuminate\Support\Facades\Auth::user()->avatar) }}" alt="">
-                <h2>{{ \Illuminate\Support\Facades\Auth::user()->name }}</h2>
-                <h6>{{ \Illuminate\Support\Facades\Auth::user()->introduction }}</h6>
+                <img src="{{ asset(user()->avatar) }}" alt="">
+                <h2>{{ user()->name }}</h2>
+                <h6>{{ user()->introduction }}</h6>
             </li>
             <li class="li-top">
+                <a href="{{ route('users.show', user()->id) }}"><i class="fa fa-user"></i>个人中心</a>
+            </li>
+            <li>
+                <a href="{{ route('users.password', user()->id) }}"><i class="fa fa-lock"></i>修改密码</a>
+            </li>
+            <li>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

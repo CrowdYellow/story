@@ -13,7 +13,13 @@
 
 Route::get('/', 'ArticlesController@index');
 Route::get('/articles/{article}', 'ArticlesController@show')->name('articles.show');
+
+// 用户
 Route::get('/users/{user}', 'UsersController@show')->name('users.show');
+// 修改密码
+Route::get('/users/{user}/password', 'UsersController@password')->name('users.password');
+Route::post('/users/{user}/password', 'UsersController@updatePassword');
+
 
 // 用户身份验证相关的路由
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

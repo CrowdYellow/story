@@ -59,18 +59,12 @@ class FirstCollection extends Command
                 'body'        => $rt['content'],
                 'topic'       => $topic,
                 'cover'       => $rt['cover'],
-                'excerpt'     => $this->make_excerpt($rt['content']),
+                'excerpt'     => make_excerpt($rt['content']),
                 'created_at'  => date('Y-m-d H:i:s'),
                 'updated_at'  => date('Y-m-d H:i:s'),
             ];
         }
         DB::table('articles')->insert($data);
-    }
-
-    public function make_excerpt($value, $length = 200)
-    {
-        $excerpt = trim(preg_replace('/\r\n|\r|\n+/', ' ', strip_tags($value)));
-        return Str::limit($excerpt, $length);
     }
 
     public function urls()
