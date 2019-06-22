@@ -18,6 +18,9 @@
                 <a href="{{ route('users.password', user()->id) }}"><i class="fa fa-lock"></i>修改密码</a>
             </li>
             <li>
+                <a href="{{ route('users.name', user()->id) }}"><i class="fa fa-edit"></i>修改名称</a>
+            </li>
+            <li>
                 <a href="{{ route('users.avatar', user()->id) }}"><i class="fa fa-picture-o"></i>修改头像</a>
             </li>
             <li>

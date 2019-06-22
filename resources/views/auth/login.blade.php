@@ -11,7 +11,7 @@
                     <form class="col s12" method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="input-field">
-                            <input type="text" class="validate" name="phone" placeholder="账号" required>
+                            <input type="text" class="validate" name="phone" placeholder="手机号" required>
                             @if ($errors->has('phone'))
                                 <strong style="color: #f00;">{{ $errors->first('phone') }}</strong>
                             @endif

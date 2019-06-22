@@ -22,6 +22,10 @@ Route::post('/users/{user}/password', 'UsersController@updatePassword');
 // 修改头像
 Route::get('/users/{user}/avatar', 'UsersController@avatar')->name('users.avatar');
 Route::post('/users/{user}/avatar', 'UsersController@updateAvatar');
+// 修改名称
+Route::get('/users/{user}/name', 'UsersController@name')->name('users.name');
+Route::post('/users/{user}/name', 'UsersController@updateName');
+
 
 
 

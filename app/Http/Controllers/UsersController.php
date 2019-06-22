@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Handler\ImageUploadHandler;
 use App\Handlers\ApiResponse;
+use App\Http\Requests\NameRequest;
 use App\Http\Requests\PasswordRequest;
 use App\Models\Article;
 use App\Models\User;
@@ -72,5 +73,18 @@ class UsersController extends Controller
             'message' => "失败",
         ];
         return response()->json($data);
+    }
+
+    public function name(User $user)
+    {
+        $this->authorize('update', $user);
+        return view("users.name", compact('user'));
+    }
+
+    public function updateName(NameRequest $request, User $user)
+    {
+        $user->name = $request->name;
+        $user->save();
+        return redirect()->route('users.show', $user->id);
     }
 }
