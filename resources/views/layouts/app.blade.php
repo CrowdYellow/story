@@ -23,6 +23,11 @@
     <link rel="shortcut icon" href="{{ asset('static/img/favicon.png') }}">
     @yield('css')
 </head>
+<style>
+    .pagination li a {
+        font-size: .5rem;
+    }
+</style>
 <body>
 
 <!-- navbar top -->

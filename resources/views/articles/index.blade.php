@@ -16,7 +16,7 @@
                                         <span><i class="fa fa-calendar"></i> {{ $article->created_at }}</span>
                                     </div>
                                     <p>{{ $article->excerpt }}</p>
-                                    <a href="{{ route('article.show', $article->id) }}" class="button-default">阅读全文</a>
+                                    <a href="{{ route('articles.show', $article->id) }}" class="button-default">阅读全文</a>
                                 </div>
                             </div>
                         </div>

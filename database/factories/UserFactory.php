@@ -20,11 +20,12 @@ use Faker\Generator as Faker;
 $factory->define(User::class, function (Faker $faker) {
     $date_time = $faker->date . ' ' . $faker->time;
     return [
-        'name'       => $faker->unique()->name,
-        'role_id'    => 1,
-        'avatar'     => "images/users/default.png",
-        'password'   => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        'created_at' => $date_time,
-        'updated_at' => $date_time,
+        'name'        => $faker->unique()->name,
+        'role_id'     => 1,
+        'avatar'      => "images/users/default.png",
+        'password'    => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        'views_count' => mt_rand(1000, 9999),
+        'created_at'  => $date_time,
+        'updated_at'  => $date_time,
     ];
 });

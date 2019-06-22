@@ -32,4 +32,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Article::class);
     }
+
+    public function updateViewCount()
+    {
+        $this->views_count = $this->views_count + 1;
+        $this->save();
+    }
 }
