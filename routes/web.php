@@ -19,6 +19,10 @@ Route::get('/users/{user}', 'UsersController@show')->name('users.show');
 // 修改密码
 Route::get('/users/{user}/password', 'UsersController@password')->name('users.password');
 Route::post('/users/{user}/password', 'UsersController@updatePassword');
+// 修改头像
+Route::get('/users/{user}/avatar', 'UsersController@avatar')->name('users.avatar');
+Route::post('/users/{user}/avatar', 'UsersController@updateAvatar');
+
 
 
 // 用户身份验证相关的路由

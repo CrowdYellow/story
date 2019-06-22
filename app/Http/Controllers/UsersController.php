@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Handler\ImageUploadHandler;
 use App\Handlers\ApiResponse;
 use App\Http\Requests\PasswordRequest;
 use App\Models\Article;
@@ -43,5 +44,33 @@ class UsersController extends Controller
         $user->save();
 
         return redirect()->route('users.show', $user->id);
+    }
+
+    public function avatar(User $user)
+    {
+        $this->authorize('update', $user);
+        return view("users.avatar", compact('user'));
+    }
+
+    public function updateAvatar(Request $request, ImageUploadHandler $uploader, User $user)
+    {
+        $result = $uploader->save($request->avatar, 'avatars', $user->id);
+        if ($result) {
+            $data['avatar'] = $result['path'];
+            $user->update($data);
+            $data = [
+                'status'  => 200,
+                'message' => "成功",
+                'data'    => [
+                    'path' => $result['path'],
+                ]
+            ];
+            return response()->json($data);
+        }
+        $data = [
+            'status'  => 400,
+            'message' => "失败",
+        ];
+        return response()->json($data);
     }
 }

@@ -18,6 +18,9 @@
                 <a href="{{ route('users.password', user()->id) }}"><i class="fa fa-lock"></i>修改密码</a>
             </li>
             <li>
+                <a href="{{ route('users.avatar', user()->id) }}"><i class="fa fa-picture-o"></i>修改头像</a>
+            </li>
+            <li>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
