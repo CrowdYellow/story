@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{ asset('static/css/magnific-popup.css') }}">
     <link rel="stylesheet" href="{{ asset('static/css/style.css') }}">
     <link rel="shortcut icon" href="{{ asset('static/img/favicon.png') }}">
+    @yield('css')
 </head>
 <body>
 
@@ -75,6 +76,6 @@
 <script src="{{ asset('static/js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('static/js/fakeLoader.min.js') }}"></script>
 <script src="{{ asset('static/js/main.js') }}"></script>
-
+@yield('js')
 </body>
 </html>

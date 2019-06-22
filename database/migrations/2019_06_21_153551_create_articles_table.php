@@ -20,6 +20,8 @@ class CreateArticlesTable extends Migration
             $table->string('title');
             $table->mediumText('body');
             $table->string('topic');
+            $table->string('cover')->comment("封面图");
+            $table->text('excerpt')->comment("文章摘要");
             $table->timestamps();
         });
     }

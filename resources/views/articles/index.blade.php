@@ -1,69 +1,201 @@
 @extends('layouts.app')
+@section('css')
+    <style>
+        body,dd,div,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,img,input,li,ol,p,pre,td,textarea,th,ul {
+            padding:0;
+            margin:0
+        }
+        img {
+            border:0
+        }
+        li,ol,ul {
+            list-style:none
+        }
+        a{
+            text-decoration: none;
+        }
+        .nav-top{
+            width: 100%;
+            height: 1.8rem;
+            position: relative;
+        }
+        .nav-top .nav a {
+            display: block;
+            float: left;
+            width: 2.65rem;
+            height: 1.8rem;
+            line-height: 1.8rem;
+            text-align: center;
+            font-size: 18px;
+            color: rgb(133, 133, 133);
+            position: relative;
+        }
+        .nav-top .nav a.on {
+            height: 1.65rem;
+            border-bottom: 0.15rem solid rgb(255, 111, 33);
+            color: rgb(255, 111, 33);
+            font-weight: bold;
+        }
+        .nav span {
+            display: block;
+            float: left;
+            width: 1.45rem;
+            height: 1rem;
+            overflow: hidden;
+            background: transparent url(https://www.guozhi.org/skin/yokam/arrow_down.png) no-repeat scroll 0% 0% / 50% auto;
+            cursor: pointer;
+            position: absolute;
+            right: 0.05rem;
+            bottom: 0.025rem;
+        }
+        .nav-top .all.on {
+            height: 3.8rem;
+        }
+        .nav-top .all {
+            width: 16rem;
+            height: 0px;
+            overflow: hidden;
+            background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: 999;
+            transition: all 0.3s ease 0s;
+        }
+        .nav-top .nav {
+            width: 16rem;
+            height: 1.8rem;
+            overflow: hidden;
+            background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.12);
+        }
+        .nav-top .all a {
+            display: block;
+            float: left;
+            width: 2.65rem;
+            height: 1.8rem;
+            line-height: 1.8rem;
+            text-align: center;
+            font-size: 18px;
+            color: rgb(133, 133, 133);
+            position: relative;
+        }
+        .nav-top .all a.on {
+            color: rgb(255, 111, 33);
+            font-weight: bold;
+            height: 1.65rem;
+            border-bottom: 0.15rem solid rgb(255, 111, 33);
+        }
+
+        .nav-top .all span {
+            display: block;
+            float: left;
+            width: 1.45rem;
+            height: 1rem;
+            overflow: hidden;
+            background: transparent url(https://www.guozhi.org/skin/yokam/arrow_up.png) no-repeat scroll 0% 0% / 50% auto;
+            cursor: pointer;
+            position: absolute;
+            right: 0.05rem;
+            bottom: 0.025rem;
+            opacity: 0;
+            transition: all 0.5s ease 0s;
+        }
+        .nav-top .all.on span {
+            opacity: 1;
+        }
+
+    </style>
+@stop
 @section('content')
-<!-- blog -->
-<div class="pages section">
-    <div class="container">
-        <div class="blog">
-            <div class="row">
-                <div class="col s12">
-                    <div class="blog-content">
-                        <img src="{{ asset('static/img/blog1.jpg') }}" alt="">
-                        <div class="blog-detailt">
-                            <h5><a href="">How To Design Fresh and Clean</a></h5>
-                            <div class="date">
-                                <span><i class="fa fa-calendar"></i> July 22, 2016</span>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quasi sit aperiam quia voluptatem odio, facere iusto magni sunt, cumque quae, molestias temporibus ducimus repellendus!</p>
-                            <div class="button-default">Read More</div>
-                        </div>
+    <!-- blog -->
+    <div class="pages section">
+        <div class="container">
+            <div class="blog">
+                <div class="row nav-top">
+                    <div class="nav">
+                        <a class="on">推荐<i></i></a>
+                        <a >爱情<i></i></a>
+                        <a >奇幻<i></i></a>
+                        <a >悬疑<i></i></a>
+                        <a class="sq">世情</a>
+                        <span data-type="open" class="open"></span>
+                    </div>
+                    <div class="all">
+                        <a class="on">推荐<i></i></a>
+                        @foreach($categories as $category)
+                            <a href="">{{ $category->name }}<i></i></a>
+                        @endforeach
+                        <span data-type="close" class="close"></span>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col s12">
-                    <div class="blog-content">
-                        <img src="{{ asset('static/img/blog2.jpg') }}" alt="">
-                        <div class="blog-detailt">
-                            <h5><a href="">How To Design Fresh and Clean</a></h5>
-                            <div class="date">
-                                <span><i class="fa fa-calendar"></i> July 22, 2016</span>
+                @foreach($articles as $article)
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="blog-content">
+                                <img src="{{ $article->cover }}" alt="">
+                                <div class="blog-detailt">
+                                    <h5><a href="">{{ $article->title }}</a></h5>
+                                    <div class="date">
+                                        <span><i class="fa fa-calendar"></i>{{ $article->created_at }}</span>
+                                    </div>
+                                    <p>{{ $article->excerpt }}</p>
+                                    <a href="" class="button-default">阅读全文</a>
+                                </div>
                             </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quasi sit aperiam quia voluptatem odio, facere iusto magni sunt, cumque quae, molestias temporibus ducimus repellendus!</p>
-                            <div class="button-default">Read More</div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12">
-                    <div class="blog-content">
-                        <img src="{{ asset('static/img/blog3.jpg') }}" alt="">
-                        <div class="blog-detailt">
-                            <h5><a href="">How To Design Fresh and Clean</a></h5>
-                            <div class="date">
-                                <span><i class="fa fa-calendar"></i> July 22, 2016</span>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quasi sit aperiam quia voluptatem odio, facere iusto magni sunt, cumque quae, molestias temporibus ducimus repellendus!</p>
-                            <div class="button-default">Read More</div>
+                @endforeach
+                <div class="row">
+                    <div class="col s12">
+                        <div class="pagination-blog">
+                            {!! $articles->render() !!}
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12">
-                    <div class="pagination-blog">
-                        <ul>
-                            <li class="active"><a href="">1</a></li>
-                            <li><a href="">2</a></li>
-                            <li><a href="">3</a></li>
-                            <li><a href="">4</a></li>
-                            <li><a href="">5</a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- end blog -->
+    <!-- end blog -->
+@stop
+@section('js')
+    <script>
+        //字体大小
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if(!clientWidth) return;
+                    docEl.style.fontSize = 40 * (clientWidth / 640) + 'px';
+                };
+
+
+            if(!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+
+        $('.open').click(function () {
+            $('.all').addClass('on')
+        })
+        $('.close').click(function () {
+            $('.all').removeClass('on')
+        })
+        //选择
+        $(".nav,.all").on("click","a",function() {
+            $(this).addClass('on').siblings().removeClass('on');
+            $('.all').removeClass('on')
+
+        });
+
+        $(".all").on("click","a",function() {
+            var i = $(this).index();
+            $(this).addClass('on').siblings().removeClass('on');
+            $('.nav a').removeClass('on')
+            $('.all').removeClass('on');
+            var aa =$('.all a').eq(i).text();
+            $('.sq').text(aa).addClass('on')
+        });
+    </script>
 @stop

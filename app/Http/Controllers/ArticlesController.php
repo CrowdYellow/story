@@ -2,26 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use QL\QueryList;
+use App\Models\Articles;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+use QL\QueryList;
 
 class ArticlesController extends Controller
 {
     public function index()
     {
-        $url = 'https://www.guozhi.org/qihuan/69017.html';
-// 定义采集规则
-        $rules = [
-            // 采集文章标题
-            'title' => ['h1','text'],
-            // 采集文章作者
-            'topics' => ['.tag>a','text'],
-            // 采集文章内容
-            'content' => ['.main','html']
-        ];
-        $rt = QueryList::get($url)->rules($rules)->query()->getData();
+        $categories = Category::orderBy('sort', 'asc')->get();
+        $articles = Articles::paginate(20);
 
-        print_r($rt->all());
-//        return view("articles.index");
+        return view("articles.index", compact('articles', 'categories'));
+    }
+
+    public function show(Articles $articles)
+    {
     }
 }
