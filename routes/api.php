@@ -20,3 +20,4 @@ use Illuminate\Http\Request;
 Route::get('/{id}/articles', 'Api\ArticlesController@articleByUserId');
 Route::get('categories', 'Api\CategoriesController@index');
 Route::get('wechat', 'Api\SystemController@index');
+Route::get('ads', 'Api\ImagesController@ads');

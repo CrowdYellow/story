@@ -47,13 +47,8 @@
                         <span style="border: 1px solid #ccc;display: inline-block;padding: 5px;">{{ $article->topic }}</span>
                     </div>
                     <p>{!! $article->body !!}</p>
-                    <div class="share-post">
-                        <ul>
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-google"></i></a></li>
-                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
+                    <div id="otherUrl" class="share-post" style="border: 0">
+                        <a href=''><img src='' alt=''></a>
                     </div>
                 </div>
             </div>
@@ -82,6 +77,9 @@
                 </div>
             </div>
             <div class="row">
+                <div id="otherArt" class="share-post" style="border: 0">
+                    <a href=''><img src='' alt=''></a>
+                </div>
                 <div style="padding:0.42667rem 0.42667rem;font-size:1rem">
                     <dt>相关阅读</dt>
                 </div>
@@ -98,7 +96,7 @@
             </div>
             <div class="row">
                 <div class="col s12">
-                    <p style="text-align: center;" id="weChat"><img src="//www.guozhi.org/wx_tz/wxewm_ledu.jpg"></p>
+                    <p style="text-align: center;" id="weChat"></p>
                 </div>
             </div>
         </div>
@@ -131,7 +129,17 @@
         type: "GET",
         dataType: "json",
         success:function (data) {
+            $("#weChat").html("<img src='/"+data.wechat+"'>");
             console.log(data.wechat);
+        }
+    });
+    $.ajax({
+        url: "/api/ads",
+        type: "GET",
+        dataType: "json",
+        success:function (data) {
+            $("#otherUrl").html("<a href='"+data[0].url+"'><img src='/"+data[0].images+"' alt=''></a>");
+            $("#otherArt").html("<a href='"+data[1].url+"'><img style='width: 100%;' src='/"+data[1].images+"' alt=''></a>");
         }
     });
 </script>
