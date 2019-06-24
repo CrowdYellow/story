@@ -94,25 +94,25 @@
 <div class="row nav-top">
     <div class="nav">
         <a class="on" href="/">推荐<i></i></a>
-        <a>爱情<i></i></a>
-        <a>奇幻<i></i></a>
-        <a>悬疑<i></i></a>
-        <a class="sq">世情</a>
+        <a href="{{ route('categories.show', 1) }}">爱情<i></i></a>
+        <a href="{{ route('categories.show', 2) }}">奇幻<i></i></a>
+        <a href="{{ route('categories.show', 3) }}">悬疑<i></i></a>
+        <a class="sq" href="{{ route('categories.show', 4) }}">世情</a>
         <span data-type="open" class="open"></span>
     </div>
     <div class="all">
         <a class="on" href="/">推荐<i></i></a>
-        <a>爱情<i></i></a>
-        <a>奇幻<i></i></a>
-        <a>悬疑<i></i></a>
-        <a>世情<i></i></a>
-        <a>婚姻<i></i></a>
-        <a>青春<i></i></a>
-        <a>励志<i></i></a>
-        <a>小知识<i></i></a>
-        <a>情趣<i></i></a>
-        <a>问答<i></i></a>
-        <a>娱乐<i></i></a>
+        <a href="{{ route('categories.show', 1) }}">爱情<i></i></a>
+        <a href="{{ route('categories.show', 2) }}">奇幻<i></i></a>
+        <a href="{{ route('categories.show', 3) }}">悬疑<i></i></a>
+        <a href="{{ route('categories.show', 4) }}">世情<i></i></a>
+        <a href="{{ route('categories.show', 5) }}">婚姻<i></i></a>
+        <a href="{{ route('categories.show', 6) }}">青春<i></i></a>
+        <a href="{{ route('categories.show', 7) }}">励志<i></i></a>
+        <a href="{{ route('categories.show', 8) }}">小知识<i></i></a>
+        <a href="{{ route('categories.show', 9) }}">情趣<i></i></a>
+        <a href="{{ route('categories.show', 10) }}">问答<i></i></a>
+        <a href="{{ route('categories.show', 11) }}">娱乐<i></i></a>
         <span data-type="close" class="close"></span>
     </div>
 </div>

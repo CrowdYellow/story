@@ -11,8 +11,10 @@
 |
 */
 
-Route::get('/', 'ArticlesController@index');
+Route::get('/', 'ArticlesController@index')->name('home');
 Route::get('/articles/{article}', 'ArticlesController@show')->name('articles.show');
+// 分类
+Route::get('/categories/{category}', 'CategoriesController@show')->name('categories.show');
 
 // 用户
 Route::get('/users/{user}', 'UsersController@show')->name('users.show');

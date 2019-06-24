@@ -16,12 +16,28 @@
             display: table;
             clear: both;
         }
+        .all {
+            padding: 1rem 0;
+        }
+        .all a{
+            display: inline-block;
+            padding: .5rem;
+            font-size: 1.1rem;
+        }
+        a.active{
+            border-bottom: 0.15rem solid rgb(255, 111, 33);
+        }
     </style>
     <!-- single post -->
     <div class="pages section">
-        @include('layouts._top_nav')
         <div class="container">
             <div class="blog-single">
+                <div class="all">
+                    <a class="{{ active_class(if_route('home')) }}" href="/">推荐<i></i></a>
+                    @foreach($categories as $category)
+                        <a href="{{ route('categories.show', $category->id) }}" class="@if($article->category_id == $category->id) active @endif ">{{ $category->name }}<i></i></a>
+                    @endforeach
+                </div>
                 <div class="blog-single-content" id="switchLoad">
                     <h2>{{ $article->title }}</h2>
                     <div class="date">
