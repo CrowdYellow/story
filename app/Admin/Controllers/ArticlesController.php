@@ -139,7 +139,7 @@ class ArticlesController extends Controller
         $form->select('category_id', '分类')->options('/api/categories');
 
         // 创建一个选择图片的框
-        $form->image('cover', '封面图片')->rules('required|image');
+        $form->image('cover', '封面图片')->rules('required|image')->uniqueName()->move('public/upload/images/articles');
 
         $form->textarea('excerpt', '文章简述')->rules('required');
         // 创建一个富文本编辑器

@@ -136,7 +136,7 @@ class ImagesController extends Controller
         $form = new Form(new Image);
         $form->select('type', '分类')->options([1 => '文章广告'])->rules('required');;
         $form->text('url', '图片外联')->rules('required');;
-        $form->image('images', '图片地址')->uniqueName()->rules('required|image');;
+        $form->image('images', '图片地址')->uniqueName()->move('public/upload/images/')->rules('required|image');;
         return $form;
     }
 }
