@@ -5,6 +5,7 @@ namespace App\Admin\Controllers;
 use App\Models\Article;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\HasResourceActions;
+use Encore\Admin\Facades\Admin;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
@@ -52,8 +53,7 @@ class ArticlesController extends Controller
     public function edit($id, Content $content)
     {
         return $content
-            ->header('Edit')
-            ->description('description')
+            ->header('编辑文章')
             ->body($this->form()->edit($id));
     }
 
@@ -66,8 +66,7 @@ class ArticlesController extends Controller
     public function create(Content $content)
     {
         return $content
-            ->header('Create')
-            ->description('description')
+            ->header('创建文章')
             ->body($this->form());
     }
 
@@ -86,7 +85,6 @@ class ArticlesController extends Controller
 
         $grid->actions(function ($actions) {
             $actions->disableView();
-            $actions->disableDelete();
         });
         $grid->tools(function ($tools) {
             // 禁用批量删除按钮
@@ -131,13 +129,21 @@ class ArticlesController extends Controller
     {
         $form = new Form(new Article);
 
-        $form->number('user_id', 'User id');
-        $form->number('category_id', 'Category id');
-        $form->text('title', 'Title');
-        $form->textarea('body', 'Body');
-        $form->text('topic', 'Topic');
-        $form->image('cover', 'Cover');
-        $form->textarea('excerpt', 'Excerpt');
+        // 创建一个输入框，第一个参数 title 是模型的字段名，第二个参数是该字段描述
+        $form->text('title', '文章标题')->rules('required');
+
+        $form->text('topic', '文章话题')->rules('required');
+
+        $form->hidden('user_id', '用户ID')->value(Admin::user()->id);
+
+        $form->select('category_id', '分类')->options('/api/categories');
+
+        // 创建一个选择图片的框
+        $form->image('cover', '封面图片')->rules('required|image');
+
+        $form->textarea('excerpt', '文章简述')->rules('required');
+        // 创建一个富文本编辑器
+        $form->editor('body', '文章内容')->rules('required');
 
         return $form;
     }
