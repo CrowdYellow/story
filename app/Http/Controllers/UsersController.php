@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Handler\ImageUploadHandler;
-use App\Handlers\ApiResponse;
 use App\Http\Requests\NameRequest;
 use App\Http\Requests\PasswordRequest;
 use App\Models\Article;
@@ -40,7 +39,7 @@ class UsersController extends Controller
             return back();
         }
 
-        $user->password = $request->password;
+        $user->password = bcrypt($request->password);
 
         $user->save();
 

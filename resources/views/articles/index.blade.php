@@ -11,7 +11,7 @@
                             <div class="blog-content">
                                 <img src="{{ $article->cover }}" alt="">
                                 <div class="blog-detailt">
-                                    <h5><a href="">{{ $article->title }}</a></h5>
+                                    <h5><a href="{{ route('articles.show', $article->id) }}">{{ $article->title }}</a></h5>
                                     <div class="date">
                                         <span><i class="fa fa-calendar"></i> {{ $article->created_at }}</span>
                                     </div>
