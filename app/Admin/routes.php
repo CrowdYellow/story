@@ -9,7 +9,6 @@ Route::group([
     'namespace'     => config('admin.route.namespace'),
     'middleware'    => config('admin.route.middleware'),
 ], function (Router $router) {
-
     $router->get('/', 'HomeController@index');
     $router->get('users', 'UsersController@index');
     $router->get('articles', 'ArticlesController@index');
@@ -24,4 +23,7 @@ Route::group([
     $router->get('images/{id}/edit', 'ImagesController@edit');
     $router->put('images/{id}', 'ImagesController@update');
     $router->delete('images/{id}', 'ImagesController@destroy');
+    $router->get('systems', 'SystemController@index');
+    $router->get('systems/{id}/edit', 'SystemController@edit');
+    $router->put('systems/{id}', 'SystemController@update');
 });
