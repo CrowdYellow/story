@@ -18,4 +18,10 @@ Route::group([
     $router->get('articles/{id}/edit', 'ArticlesController@edit');
     $router->put('articles/{id}', 'ArticlesController@update');
     $router->delete('articles/{id}', 'ArticlesController@destroy');
+    $router->get('images', 'ImagesController@index');
+    $router->get('images/create', 'ImagesController@create');
+    $router->post('images', 'ImagesController@store');
+    $router->get('images/{id}/edit', 'ImagesController@edit');
+    $router->put('images/{id}', 'ImagesController@update');
+    $router->delete('images/{id}', 'ImagesController@destroy');
 });
