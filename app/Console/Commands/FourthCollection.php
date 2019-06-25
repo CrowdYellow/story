@@ -41,14 +41,17 @@ class FourthCollection extends Command
     public function handle()
     {
         $data = [];
+        $rules = [
+            'title'   => ['h1', 'text'],
+            'topic'   => ['.tag>a', 'text'],
+            'content' => ['.main', 'html'],
+            'cover'   => ['.main img', '_src'],
+        ];
+        $pl = QueryList::rules($rules);
         foreach ($this->urls() as $url) {
-            $rules = [
-                'title'   => ['h1', 'text'],
-                'topic'   => ['.tag>a', 'text'],
-                'content' => ['.main', 'html'],
-                'cover'   => ['.main img', '_src'],
-            ];
-            $rt = QueryList::get($url['url'])->rules($rules)->query()->getData()->all()[0];
+
+            $rt = $pl->get($url['url'])->query()->getData()->all()[0];
+            $pl->destruct();
             $topic = isset($rt['topic']) ? $rt['topic'] : "故事";
             $cover = isset($rt['cover']) ? $rt['cover'] : "";
             $data[] = [

@@ -115,7 +115,6 @@
         type: "GET",
         dataType: "json",
         success:function (data) {
-            // var data = JSON.parse(response);
             let box = document.getElementById("articles-list");
             let p = '';
             for (let i = 0; i < data.length; i++) {
