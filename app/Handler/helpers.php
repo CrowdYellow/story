@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
 
 if ( !function_exists('user') ) {
@@ -29,5 +30,7 @@ function category_nav_active($category_id)
 
 function getWebTitle()
 {
-    return \App\Models\System::first();
+    return Cache::remember("config", 1440, function(){
+        return \App\Models\System::first();
+    });
 }

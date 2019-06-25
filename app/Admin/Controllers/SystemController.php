@@ -9,6 +9,7 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
+use Illuminate\Support\Facades\Cache;
 
 class SystemController extends Controller
 {
@@ -26,6 +27,12 @@ class SystemController extends Controller
         return $content
             ->header('编辑文章')
             ->body($this->form()->edit($id));
+    }
+
+    public function update($id)
+    {
+        Cache::forget("config");
+        return $this->form()->update($id);
     }
 
     /**
