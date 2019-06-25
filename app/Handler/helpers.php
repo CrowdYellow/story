@@ -29,5 +29,5 @@ function category_nav_active($category_id)
 
 function getWebTitle()
 {
-    //
+    return \App\Models\System::first();
 }

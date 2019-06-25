@@ -2,15 +2,14 @@
 <html lang="zxx">
 <head>
     <meta charset="UTF-8">
-    <title>手机读故事网 - 每天读点故事在线阅读</title>
-    <meta name="keywords" content="手机读故事网，每天读点故事在线阅读">
-    <meta name="description" content="手机读故事网,最适宜手机阅读的精品原创故事。作家作品集页面可以让你免费看完你喜欢的作家故事全文。电脑在线每天读点故事，让生活充满故事色彩。">
+    <title>{{ getWebTitle()->web_title }}</title>
+    <meta name="keywords" content="{{ getWebTitle()->web_keywords }}">
+    <meta name="description" content="{{ getWebTitle()->web_description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">2
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="HandheldFriendly" content="True">
-
     <link rel="stylesheet" href="{{ asset('static/css/materialize.css') }}">
     <link rel="stylesheet" href="{{ asset('static/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('static/css/normalize.css') }}">
