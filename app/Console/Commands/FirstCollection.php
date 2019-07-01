@@ -41,7 +41,7 @@ class FirstCollection extends Command
      */
     public function handle()
     {
-        Article::truncate();
+//        Article::truncate();
         $data = [];
         $rules = [
             'title'   => ['h1', 'text'],

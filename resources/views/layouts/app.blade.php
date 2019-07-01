@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>@yield('title', '')</title>
-    <meta name="keywords" content="{{ getWebTitle()->web_keywords }}">
-    <meta name="description" content="{{ getWebTitle()->web_description }}">
+    <meta name="keywords" content="@yield('keywords', '')">
+    <meta name="description" content="@yield('description', '')">
     <meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('title', isset($category) ? $category->name.'-'.getWebTitle()->web_title.'-'.getWebTitle()->web_subtitle : getWebTitle()->web_title.'-'.getWebTitle()->web_subtitle)
+@section('keywords', isset($category) ? $category->name.'-'.getWebTitle()->web_title.'-'.getWebTitle()->web_subtitle : getWebTitle()->web_title.'-'.getWebTitle()->web_subtitle)
+@section('description', getWebTitle()->web_description)
 @section('content')
     <style>
         .all {

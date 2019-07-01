@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('title', $article->title.'-'.$article->category->name.'-'.getWebTitle()->web_title)
+@section('keywords', $article->title)
+@section('description', $article->excerpt)
 @section('content')
     <style>
         .recommends .list a{

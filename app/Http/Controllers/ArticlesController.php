@@ -21,7 +21,7 @@ class ArticlesController extends Controller
             });
         }
         $categories = Category::orderBy('sort', 'asc')->get();
-        $articles = $builder->paginate(20);
+        $articles = $builder->orderBy('id', 'desc')->paginate(20);
 
         return view("articles.index", compact('articles', 'categories'));
     }
