@@ -4,14 +4,14 @@
 @section('description', getWebTitle()->web_description)
 @section('content')
     <style>
-        .all {
+        /*.all {
             padding: 1rem 0;
         }
         .all a{
             display: inline-block;
             padding: .5rem;
             font-size: 1.1rem;
-        }
+        }*/
         a.active{
             border-bottom: 0.15rem solid rgb(255, 111, 33);
         }

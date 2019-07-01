@@ -279,9 +279,20 @@ textarea.materialize-textarea:focus:not([readonly]) {
 .all a {
 	/* display: inline-block; */
 	padding: .5rem;
-	font-size: 1.1rem;
+	font-size: 18px;
 	flex: none;
 	margin-right: 10px;
+}
+
+#articles-list p a{
+	font-size: 14px;
+}
+.blog-detailt h5 a{
+	font-size: 18px;
+	line-height: 1.5;
+}
+.blog-detailt p{
+	font-size: 14px;
 }
 .searBox {
 	width: 100%;
@@ -331,11 +342,22 @@ input,textarea,select,a:focus {
 	height: 21px;*/
 	overflow: hidden;
 	float: left;
-	background: transparent url('/static/img/zoom.png') no-repeat scroll 0% 0% / cover ;
+	/*background: transparent url('/static/img/zoom.png') no-repeat scroll 0% 0% / cover ;*/
 	margin-top: 16px;
 	margin-left:11px;
+	background: #000000;
 }
-
+.blog-single-content h2{
+	padding: 10px 0 20px 0px;
+	text-align: center;
+	font-family: "Hiragino Sans GB","Microsoft YaHei","simsun";
+	font-weight: 700;
+}
+.blog-single-content p{
+	font-size: 17px;
+	color: #000000;
+	line-height: 1.5;
+}
 .searBox .search span i{
 	font-size: 20px;
 }

@@ -11,7 +11,7 @@
             padding: .5rem;
             background: #eee;
             margin: .5rem;
-            height: 3rem;
+           /* height: 3rem;*/
             overflow: hidden;
         }
         .recommends .list:after{
@@ -84,7 +84,7 @@
                         @foreach($otherArticles as $otherArticle)
                             <a href="{{ route('articles.show', $otherArticle->id) }}">
                                 <strong>{{ $otherArticle->title }}</strong>
-                                <p>{{ $otherArticle->excerpt }}</p>
+                               {{-- <p>{{ $otherArticle->excerpt }}</p>--}}
                             </a>
                         @endforeach
                     </div>
