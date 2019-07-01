@@ -8,7 +8,15 @@ $(function(){
 		closeOnClick: false
 
 	});
-
+	$('.side-nav-right').click(function (e) {
+		e.preventDefault();
+		$('.side-nav-right .fa ').toggleClass('fa-close');
+		$('.searBox').toggleClass('on');
+	});
+	
+	$('.search_sub').click(function () {
+		$('#searchForm').submit();
+	})
 	// slider
 	$(".slider").slider({full_width: true});
 

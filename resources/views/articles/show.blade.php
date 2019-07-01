@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', $article->title.'-'.$article->category->name.'-'.getWebTitle()->web_title)
 @section('content')
     <style>
         .recommends .list a{
@@ -16,14 +17,7 @@
             display: table;
             clear: both;
         }
-        .all {
-            padding: 1rem 0;
-        }
-        .all a{
-            display: inline-block;
-            padding: .5rem;
-            font-size: 1.1rem;
-        }
+
         a.active{
             border-bottom: 0.15rem solid rgb(255, 111, 33);
         }
@@ -44,7 +38,7 @@
                         <span><i class="fa fa-calendar"></i> {{ $article->created_at }}</span>
                     </div>
                     <div style="text-align: right;padding: .5rem">
-                        <span style="border: 1px solid #ccc;display: inline-block;padding: 5px;">{{ $article->topic }}</span>
+                        <a href="{{ url('/topics?category='.$article->category_id.'&topics='.$article->topic) }}"><span style="border: 1px solid #ccc;display: inline-block;padding: 5px;">{{ $article->topic }}</span></a>
                     </div>
                     <p>{!! $article->body !!}</p>
                     <div id="otherUrl" class="share-post" style="border: 0">

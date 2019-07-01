@@ -104,7 +104,7 @@ p {
 }
 
 .pages {
-	margin-top: 50px !important;
+	/*margin-top: 50px !important;*/
 }
 
 .pages-head {
@@ -270,6 +270,75 @@ textarea.materialize-textarea:focus:not([readonly]) {
 /* ------------------------------
   Navbar
 ---------------------------------*/
+.all {
+	padding: 1rem 0;
+	display: flex;
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+.all a {
+	/* display: inline-block; */
+	padding: .5rem;
+	font-size: 1.1rem;
+	flex: none;
+	margin-right: 10px;
+}
+.searBox {
+	width: 100%;
+	height: 0px;
+	overflow: hidden;
+	position: relative;
+	background: black none repeat scroll 0% 0%;
+	transition: all 0.4s ease 0s;
+}
+
+.searBox.on {
+	height:50px;
+}
+
+.searBox .search {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 2;
+}
+
+.searBox .search input {
+	width: 300px;
+	float: left;
+	height: 30px;
+	padding-left: 7px;
+	padding-right: 7px;
+	margin-left:20px;
+	background: transparent none repeat scroll 0% 0%;
+	border:  none;
+	color: rgb(255, 255, 255);
+	font-size:18px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	outline: medium none;
+	margin-top: 10px;
+	font-family: "Microsoft YaHei";
+	outline:none;
+}
+input,textarea,select,a:focus {
+	outline: none;
+}
+
+.searBox .search span {
+	/*width: 21px;
+	height: 21px;*/
+	overflow: hidden;
+	float: left;
+	background: transparent url('/static/img/zoom.png') no-repeat scroll 0% 0% / cover ;
+	margin-top: 16px;
+	margin-left:11px;
+}
+
+.searBox .search span i{
+	font-size: 20px;
+}
 .navbar-top {
 	background: #111;
 	width: 100%;
@@ -280,7 +349,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 	right: 0;
 	left: 0;
 	text-align: center;
-	position: fixed;
+	/*position: fixed;*/
 	z-index: 99;
 }
 

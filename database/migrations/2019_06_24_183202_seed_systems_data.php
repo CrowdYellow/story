@@ -15,7 +15,7 @@ class SeedSystemsData extends Migration
     public function up()
     {
         $cofig = [
-            'web_title' => '手机读故事网 - 每天读点故事在线阅读',
+            'web_title' => '手机读故事网',
             'web_keywords' => '手机读故事网，每天读点故事在线阅读',
             'web_description' => '手机读故事网,最适宜手机阅读的精品原创故事。作家作品集页面可以让你免费看完你喜欢的作家故事全文。电脑在线每天读点故事，让生活充满故事色彩。',
             'we_chat' => 'images/wechat.jpg',

@@ -2,12 +2,12 @@
 <html lang="zxx">
 <head>
     <meta charset="UTF-8">
-    <title>{{ getWebTitle()->web_title }}</title>
+    <title>@yield('title', '')</title>
     <meta name="keywords" content="{{ getWebTitle()->web_keywords }}">
     <meta name="description" content="{{ getWebTitle()->web_description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">2
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="HandheldFriendly" content="True">
     <link rel="stylesheet" href="{{ asset('static/css/materialize.css') }}">
@@ -30,19 +30,32 @@
 <body>
 
 <!-- navbar top -->
-<div class="navbar-top">
-    <div class="side-nav-panel-left">
-        <a href="#" data-activates="slide-out-left" class="side-nav-left"><i class="fa fa-bars"></i></a>
+<div class="myHeaderWrap">
+    <div class="searBox">
+        <div class="search">
+            <form id="searchForm" method="get" target="_blank" action="/">
+                <input type="text" name="search" placeholder="输入关键字搜索故事..." value="" class="search_input"  id="bdcsMain">
+                <span class="search_sub"  type="submit">
+                    <i class="fa fa-search"></i>
+                </span>
+            </form>
+        </div>
     </div>
-    <!-- site brand	 -->
-    <div class="site-brand">
-        <a href="index.html"><h1>手机读故事</h1></a>
-    </div>
-    <!-- end site brand	 -->
-    <div class="side-nav-panel-right">
-        <a href="" class="side-nav-right"><i class="fa fa-search"></i></a>
+    <div class="navbar-top">
+        <div class="side-nav-panel-left">
+            <a href="#" data-activates="slide-out-left" class="side-nav-left"><i class="fa fa-bars"></i></a>
+        </div>
+        <!-- site brand	 -->
+        <div class="site-brand">
+            <a href="index.html"><h1>手机读故事</h1></a>
+        </div>
+        <!-- end site brand	 -->
+        <div class="side-nav-panel-right">
+            <a href="" class="side-nav-right"><i class="fa fa-search"></i></a>
+        </div>
     </div>
 </div>
+
 <!-- end navbar top -->
 
 @include('layouts._left')

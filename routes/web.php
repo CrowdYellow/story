@@ -15,6 +15,8 @@ Route::get('/', 'ArticlesController@index')->name('home');
 Route::get('/articles/{article}', 'ArticlesController@show')->name('articles.show');
 // 分类
 Route::get('/categories/{category}', 'CategoriesController@show')->name('categories.show');
+// 话题
+Route::get('/topics', 'TopicsController@show')->name('topics');
 
 // 用户
 Route::get('/users/{user}', 'UsersController@show')->name('users.show');

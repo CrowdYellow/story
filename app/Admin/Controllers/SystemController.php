@@ -46,6 +46,7 @@ class SystemController extends Controller
 
         $grid->id('Id');
         $grid->web_title('网站标题');
+        $grid->web_subtitle('网站副标题');
         $grid->web_keywords('网站关键字');
         $grid->web_description('网站描述');
         $grid->we_chat('微信公众号');
@@ -99,6 +100,7 @@ class SystemController extends Controller
         $form = new Form(new System);
 
         $form->text('web_title', '网站标题')->rules('required');
+        $form->text('web_subtitle', '网站副标题')->rules('required');
         $form->text('web_keywords', '网站关键字')->rules('required');
         $form->text('web_description', '网站描述')->rules('required');
         $form->image('we_chat', '微信公众号')->rules('required|image')->uniqueName()->move('/uploads/chat');
